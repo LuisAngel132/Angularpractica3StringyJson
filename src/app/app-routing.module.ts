@@ -5,9 +5,10 @@ import { SegundoComponent } from './Componentes/segundo/segundo.component';
 import { TerceroComponent } from './Componentes/tercero/tercero.component';
 import { CuartoComponent } from './Componentes/cuarto/cuarto.component';
 import { QuintoComponent } from './Componentes/quinto/quinto.component';
+import { EdadGuard } from './guards/edad.guard';
 const routes: Routes = [
   {path: '1',component:PrimeroComponent},
-  {path: '2',component:SegundoComponent},
+  {path: '2',component:SegundoComponent,canActivate:[EdadGuard]},
   {path: '3/:nombre',component:TerceroComponent},
   {path: '4/:persona2',component:CuartoComponent},
   {path: '**',component:QuintoComponent},
